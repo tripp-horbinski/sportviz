@@ -1,0 +1,34 @@
+{
+  "name": "@sportviz/react",
+  "version": "0.1.0",
+  "description": "React components for sports data visualization",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target browser --external react --external react-dom --external @sportviz/core && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@sportviz/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2"
+  },
+  "license": "MIT"
+}

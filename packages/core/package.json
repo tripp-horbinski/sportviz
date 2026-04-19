@@ -1,0 +1,21 @@
+{
+  "name": "@sportviz/core",
+  "version": "0.1.0",
+  "description": "Framework-agnostic sports data visualization engine",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target browser && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "bun test"
+  },
+  "license": "MIT"
+}

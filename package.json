@@ -1,0 +1,11 @@
+{
+  "name": "sportviz",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
