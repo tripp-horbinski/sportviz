@@ -20,15 +20,22 @@ jobs:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
-      - run: npm install
+      - run: bun install
+
+      # Verify .npmrc survived bun install
+      - name: Debug auth
+        run: |
+          cat ~/.npmrc || true
+          cat .npmrc || true
+          npm whoami 2>&1 || true
 
       - name: Build
         run: |
-          cd packages/core && npx bun build src/index.ts --outdir dist --target browser && npx tsc --emitDeclarationOnly
-          cd ../react && npx bun build src/index.ts --outdir dist --target browser --external react --external react-dom && npx tsc --emitDeclarationOnly
+          cd packages/core && bun run build
+          cd ../react && bun run build
 
       - name: Test
-        run: cd packages/core && npx bun test
+        run: cd packages/core && bun test
 
       - name: Publish
         run: cd packages/react && npm publish --access public
