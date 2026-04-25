@@ -31,7 +31,7 @@ jobs:
         run: cd packages/core && bun test
 
       - name: Publish
-        run: cd packages/react && npm publish --access public
+        run: cd packages/react && bunx npm publish --access public
 
       - name: GitHub Release
         env:
