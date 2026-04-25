@@ -18,8 +18,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     permissions:
-      contents: read
       id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -36,7 +36,7 @@ jobs:
           cd ../react && bun run build
 
       - name: Publish @tripp-horbinski/sportviz
-        run: cd packages/react && npm publish --provenance --access public
+        run: cd packages/react && npm publish --access public
 
   github-release:
     needs: publish
