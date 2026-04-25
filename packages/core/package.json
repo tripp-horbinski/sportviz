@@ -15,7 +15,16 @@
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target browser && bun run build:types",
     "build:types": "tsc --emitDeclarationOnly",
+    "prepublishOnly": "bun run build",
     "test": "bun test"
   },
-  "license": "MIT"
+  "keywords": ["sports", "visualization", "basketball", "shot-chart", "hexbin", "svg", "data-viz"],
+  "author": "Tripp Horbinski",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tripp-horbinski/sportviz.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/tripp-horbinski/sportviz"
 }

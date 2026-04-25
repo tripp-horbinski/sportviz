@@ -67,9 +67,9 @@ function nbaProxy(): Plugin {
             "Access-Control-Allow-Origin": "*",
           });
           res.end(JSON.stringify(data));
-        } catch (err: any) {
+        } catch {
           res.writeHead(502, { "Content-Type": "application/json" });
-          res.end(JSON.stringify({ error: err.message }));
+          res.end(JSON.stringify({ error: "Failed to reach NBA API" }));
         }
       });
     },
