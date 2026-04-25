@@ -5,13 +5,13 @@ Composable sports data visualization for React. NBA court surfaces with scatter,
 ## Install
 
 ```bash
-npm install @sportviz/core @sportviz/react
+npm install @basketball-ceo/sportviz
 ```
 
 ## Quick Start
 
 ```tsx
-import { BasketballCourt, ScatterOverlay } from "@sportviz/react";
+import { BasketballCourt, ScatterOverlay } from "@basketball-ceo/sportviz";
 
 const shots = [
   { x: 0, y: 1, made: true },
@@ -54,7 +54,7 @@ Individual data points on the court.
 Aggregate data into hexagonal bins with color-coded frequency.
 
 ```tsx
-import { blueRed } from "@sportviz/react";
+import { blueRed } from "@basketball-ceo/sportviz";
 
 <HexbinOverlay
   data={shots}
@@ -69,7 +69,7 @@ import { blueRed } from "@sportviz/react";
 NBA shooting zones with computed efficiency stats.
 
 ```tsx
-import { redGreen } from "@sportviz/react";
+import { redGreen } from "@basketball-ceo/sportviz";
 
 <ZoneOverlay
   data={shots}
@@ -148,7 +148,7 @@ All 30 NBA teams available as themes. Wood-toned court with team colors on paint
 Map team abbreviations to theme names:
 
 ```tsx
-import { teamThemeMap } from "@sportviz/react";
+import { teamThemeMap } from "@basketball-ceo/sportviz";
 
 const theme = teamThemeMap["GSW"]; // "warriors"
 ```
@@ -167,7 +167,7 @@ NBA API coordinates (`LOC_X`, `LOC_Y`) convert by dividing by 10.
 ## Color Scales
 
 ```tsx
-import { blueRed, redGreen, greenRed, colorScale } from "@sportviz/react";
+import { blueRed, redGreen, greenRed, colorScale } from "@basketball-ceo/sportviz";
 
 // Built-in
 blueRed    // cold → hot (frequency)
@@ -178,12 +178,9 @@ greenRed   // good → bad
 const custom = colorScale(["#000000", "#ff0000", "#ffff00"]);
 ```
 
-## Packages
+## Package
 
-| Package | Description |
-|---------|-------------|
-| `@sportviz/core` | Framework-agnostic engine: geometry, layers, scales, themes, types |
-| `@sportviz/react` | React components: BasketballCourt, overlays, re-exports core |
+`@basketball-ceo/sportviz` — React components + framework-agnostic core bundled together. Single install, single import.
 
 ## Development
 

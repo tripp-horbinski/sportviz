@@ -30,17 +30,12 @@ jobs:
 
       - run: bun install
 
-      - name: Build packages
+      - name: Build
         run: |
           cd packages/core && bun run build
           cd ../react && bun run build
 
-      - name: Publish @sportviz/core
-        run: cd packages/core && npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish @sportviz/react
+      - name: Publish @basketball-ceo/sportviz
         run: cd packages/react && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
