@@ -5,27 +5,19 @@ on:
     tags:
       - 'v*'
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install
-      - run: cd packages/core && bun test
+permissions:
+  id-token: write
+  contents: write
 
+jobs:
   publish:
-    needs: test
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
       - run: bun install
@@ -35,17 +27,13 @@ jobs:
           cd packages/core && bun run build
           cd ../react && bun run build
 
-      - name: Publish @tripp-horbinski/sportviz
+      - name: Test
+        run: cd packages/core && bun test
+
+      - name: Publish
         run: cd packages/react && npm publish --access public
 
-  github-release:
-    needs: publish
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - name: Create GitHub Release
+      - name: GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
