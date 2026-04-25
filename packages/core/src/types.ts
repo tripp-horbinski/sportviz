@@ -66,6 +66,8 @@ export interface Theme {
   courtStroke: string;
   courtStrokeWidth: number;
   paintFill: string;
+  /** Optional accent color for branding. Used by some overlays. */
+  accent?: string;
 }
 
 /** Predefined shooting zone with computed stats */
@@ -82,4 +84,57 @@ export interface HexbinCell {
   y: number;
   points: DataPoint[];
   count: number;
+}
+
+/** Annotation mark type */
+export type AnnotationMark = "dot" | "ring" | "cross" | "none";
+
+/** A single annotation on the court */
+export interface Annotation {
+  /** Position in court coordinates */
+  x: number;
+  y: number;
+  /** Text label */
+  label?: string;
+  /** Mark type at the position. Default: "dot" */
+  mark?: AnnotationMark;
+  /** Color for mark and label. Default: "#ffffff" */
+  color?: string;
+  /** Optional arrow/line pointing to a target position */
+  target?: { x: number; y: number };
+}
+
+/** A player position within a play frame */
+export interface PlayPlayer {
+  id: string;
+  x: number;
+  y: number;
+  /** Short label (jersey number or initials). Default: id */
+  label?: string;
+  /** Player color. Default: "#ffffff" */
+  color?: string;
+}
+
+/** A single keyframe in a play sequence */
+export interface PlayFrame {
+  /** Normalized time 0–1 */
+  time: number;
+  /** Ball position */
+  ball: Point;
+  /** Player positions at this keyframe */
+  players: PlayPlayer[];
+}
+
+/** A complete play sequence for animation */
+export interface PlaySequence {
+  /** Ordered keyframes (time should increase monotonically) */
+  frames: PlayFrame[];
+  /** Animation duration in seconds. Default: 3 */
+  duration?: number;
+  /** Ball color. Default: "#f97316" (orange) */
+  ballColor?: string;
+  /** Ball radius in court units. Default: 0.6 */
+  ballRadius?: number;
+  /** Whether to draw trail lines behind the ball. Default: true */
+  showTrail?: boolean;
 }

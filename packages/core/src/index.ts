@@ -12,6 +12,11 @@ export type {
   Theme,
   Zone,
   HexbinCell,
+  Annotation,
+  AnnotationMark,
+  PlayPlayer,
+  PlayFrame,
+  PlaySequence,
 } from "./types";
 
 // Surfaces
@@ -33,5 +38,5 @@ export type {
 export { colorScale, blueRed, greenRed, redGreen, opacityScale } from "./scales";
 
 // Themes
-export { themes, light, dark } from "./themes";
+export { themes, light, dark, teamThemeMap } from "./themes";
 export type { ThemeName } from "./themes";

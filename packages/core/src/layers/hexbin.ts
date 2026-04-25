@@ -94,7 +94,9 @@ export function computeHexbin(
   const path = hexPath(radius);
 
   return cells.map((cell, i) => {
-    const t = (values[i] - minVal) / range;
+    // sqrt normalization spreads colors better when outliers dominate
+    const linear = (values[i] - minVal) / range;
+    const t = Math.sqrt(linear);
     return {
       x: cell.x,
       y: cell.y,

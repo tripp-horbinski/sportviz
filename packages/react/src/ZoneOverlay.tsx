@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { computeZones, redGreen, type DataPoint, type ZoneConfig, type ColorScale } from "@sportviz/core";
+import { computeZones, redGreen, type DataPoint, type ZoneConfig, type ColorScale, type Zone } from "@sportviz/core";
 import { useSurface } from "./context";
 
 export interface ZoneOverlayProps {
@@ -12,6 +12,12 @@ export interface ZoneOverlayProps {
   domain?: [number, number];
   /** Opacity. Default: 0.6 */
   opacity?: number;
+  /** Format tooltip for each zone. Return null to suppress. */
+  tooltip?: (zone: { id: string; label: string; value: number }) => string | null;
+  /** Called when a zone is hovered. Null on mouse leave. */
+  onZoneHover?: (zone: Zone | null, event: React.MouseEvent) => void;
+  /** Called when a zone is clicked. */
+  onZoneClick?: (zone: Zone, event: React.MouseEvent) => void;
 }
 
 export function ZoneOverlay({
@@ -20,9 +26,13 @@ export function ZoneOverlay({
   colorScale: scale = redGreen,
   domain,
   opacity = 0.6,
+  tooltip,
+  onZoneHover,
+  onZoneClick,
 }: ZoneOverlayProps) {
   useSurface();
 
+  const interactive = !!(onZoneHover || onZoneClick);
   const config: ZoneConfig = { stat, colorScale: scale, domain, opacity };
   const zones = useMemo(() => computeZones(data, config), [data, stat, scale, domain, opacity]);
 
@@ -38,6 +48,7 @@ export function ZoneOverlay({
     <g className="sportviz-zones">
       {zones.map((zone) => {
         const t = (zone.value - minVal) / range;
+        const tip = tooltip?.(zone);
         return (
           <path
             key={zone.id}
@@ -45,7 +56,13 @@ export function ZoneOverlay({
             fill={scale(t)}
             opacity={opacity}
             stroke="none"
-          />
+            style={interactive ? { cursor: "pointer" } : undefined}
+            onMouseEnter={onZoneHover ? (e) => onZoneHover(zone, e) : undefined}
+            onMouseLeave={onZoneHover ? (e) => onZoneHover(null, e) : undefined}
+            onClick={onZoneClick ? (e) => onZoneClick(zone, e) : undefined}
+          >
+            {tip && <title>{tip}</title>}
+          </path>
         );
       })}
     </g>
