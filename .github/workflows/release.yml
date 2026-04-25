@@ -13,17 +13,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
       - run: bun install
-      - run: npm --version
-      - run: npm install -g npm@latest
-      - run: npm --version
 
       - name: Build
         run: |
@@ -34,7 +31,7 @@ jobs:
         run: cd packages/core && bun test
 
       - name: Publish
-        run: cd packages/react && bunx npm publish --provenance --access public
+        run: cd packages/react && npm publish --access public
 
       - name: GitHub Release
         env:
