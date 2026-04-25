@@ -1,6 +1,6 @@
 {
   "name": "@basketball-ceo/sportviz",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Composable sports data visualization for React — basketball courts, shot charts, hexbin heatmaps, zone efficiency, play animations",
   "type": "module",
   "main": "dist/index.js",
@@ -11,7 +11,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target browser --external react --external react-dom && bun run build:types",
     "build:types": "tsc --emitDeclarationOnly",
@@ -30,7 +32,17 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2"
   },
-  "keywords": ["sports", "visualization", "basketball", "shot-chart", "react", "svg", "data-viz", "hexbin", "court"],
+  "keywords": [
+    "sports",
+    "visualization",
+    "basketball",
+    "shot-chart",
+    "react",
+    "svg",
+    "data-viz",
+    "hexbin",
+    "court"
+  ],
   "author": "Tripp Horbinski",
   "license": "MIT",
   "repository": {
