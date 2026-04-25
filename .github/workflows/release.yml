@@ -22,13 +22,6 @@ jobs:
 
       - run: bun install
 
-      # Verify .npmrc survived bun install
-      - name: Debug auth
-        run: |
-          cat ~/.npmrc || true
-          cat .npmrc || true
-          npm whoami 2>&1 || true
-
       - name: Build
         run: |
           cd packages/core && bun run build
@@ -38,7 +31,7 @@ jobs:
         run: cd packages/core && bun test
 
       - name: Publish
-        run: cd packages/react && npm publish --access public
+        run: cd packages/react && bunx npm publish --provenance --access public
 
       - name: GitHub Release
         env:
