@@ -35,7 +35,7 @@ jobs:
           cd packages/core && bun run build
           cd ../react && bun run build
 
-      - name: Publish @basketball-ceo/sportviz
+      - name: Publish @tripp-horbinski/sportviz
         run: cd packages/react && npm publish --provenance --access public
 
   github-release:
