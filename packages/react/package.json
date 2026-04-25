@@ -1,6 +1,6 @@
 {
   "name": "@tripp-horbinski/sportviz",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Composable sports data visualization for React — basketball courts, shot charts, hexbin heatmaps, zone efficiency, play animations",
   "type": "module",
   "main": "dist/index.js",

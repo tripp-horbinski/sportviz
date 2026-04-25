@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/tripp-horbinski/sportviz/compare/v0.2.0...v0.2.1) (2026-04-25)
+
+
+### Bug Fixes
+
+* include README.md in published npm package ([2b8268a](https://github.com/tripp-horbinski/sportviz/commit/2b8268a091b90359a8287185df4b66575f05b3fa))
+
 # [0.2.0](https://github.com/tripp-horbinski/sportviz/compare/v0.1.10...v0.2.0) (2026-04-25)
 
 
