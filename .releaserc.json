@@ -7,8 +7,9 @@
     ["@semantic-release/changelog", {
       "changelogFile": "CHANGELOG.md"
     }],
-    ["@semantic-release/npm", {
-      "pkgRoot": "packages/react"
+    ["@semantic-release/exec", {
+      "prepareCmd": "cd packages/react && npm pkg set version=${nextRelease.version}",
+      "publishCmd": "cd packages/react && npm publish --access public"
     }],
     ["@semantic-release/git", {
       "assets": ["CHANGELOG.md", "packages/react/package.json"],
