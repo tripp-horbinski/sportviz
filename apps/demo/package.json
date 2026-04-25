@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@sportviz/core": "workspace:*",
-    "@sportviz/react": "workspace:*",
+    "@basketball-ceo/sportviz": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

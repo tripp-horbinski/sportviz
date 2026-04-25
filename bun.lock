@@ -12,8 +12,8 @@
       "name": "@sportviz/demo",
       "version": "0.0.0",
       "dependencies": {
+        "@basketball-ceo/sportviz": "workspace:*",
         "@sportviz/core": "workspace:*",
-        "@sportviz/react": "workspace:*",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
       },
@@ -29,12 +29,10 @@
       "version": "0.1.0",
     },
     "packages/react": {
-      "name": "@sportviz/react",
+      "name": "@basketball-ceo/sportviz",
       "version": "0.1.0",
-      "dependencies": {
-        "@sportviz/core": "workspace:*",
-      },
       "devDependencies": {
+        "@sportviz/core": "workspace:*",
         "@types/react": "^19.1.2",
         "@types/react-dom": "^19.1.2",
         "react": "^19.1.0",
@@ -84,6 +82,8 @@
     "@babel/traverse": ["@babel/traverse@7.29.0", "", { "dependencies": { "@babel/code-frame": "^7.29.0", "@babel/generator": "^7.29.0", "@babel/helper-globals": "^7.28.0", "@babel/parser": "^7.29.0", "@babel/template": "^7.28.6", "@babel/types": "^7.29.0", "debug": "^4.3.1" } }, "sha512-4HPiQr0X7+waHfyXPZpWPfWL/J7dcN1mx9gL6WdQVMbPnF3+ZhSMs8tCxN7oHddJE9fhNE7+lxdnlyemKfJRuA=="],
 
     "@babel/types": ["@babel/types@7.29.0", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.28.5" } }, "sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A=="],
+
+    "@basketball-ceo/sportviz": ["@basketball-ceo/sportviz@workspace:packages/react"],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.12", "", { "os": "aix", "cpu": "ppc64" }, "sha512-Hhmwd6CInZ3dwpuGTF8fJG6yoWmsToE+vYgD4nytZVxcu1ulHpUQRAB1UJ8+N1Am3Mz4+xOByoQoSZf4D+CpkA=="],
 
@@ -202,8 +202,6 @@
     "@sportviz/core": ["@sportviz/core@workspace:packages/core"],
 
     "@sportviz/demo": ["@sportviz/demo@workspace:apps/demo"],
-
-    "@sportviz/react": ["@sportviz/react@workspace:packages/react"],
 
     "@types/babel__core": ["@types/babel__core@7.20.5", "", { "dependencies": { "@babel/parser": "^7.20.7", "@babel/types": "^7.20.7", "@types/babel__generator": "*", "@types/babel__template": "*", "@types/babel__traverse": "*" } }, "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA=="],
 

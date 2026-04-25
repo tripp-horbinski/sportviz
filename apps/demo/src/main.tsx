@@ -10,7 +10,7 @@ import {
   type Annotation,
   type DataPoint,
   type PlaySequence,
-} from "@sportviz/react";
+} from "@basketball-ceo/sportviz";
 import type { Orientation } from "@sportviz/core";
 import { redGreen, blueRed } from "@sportviz/core";
 import { sampleShots } from "./sample-data";
