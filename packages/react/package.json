@@ -12,12 +12,13 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target browser --external react --external react-dom && bun run build:types",
     "build:types": "tsc --emitDeclarationOnly",
-    "prepublishOnly": "bun run build",
+    "prepublishOnly": "cp ../../README.md . && bun run build",
     "test": "bun test"
   },
   "peerDependencies": {
