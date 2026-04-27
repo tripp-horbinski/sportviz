@@ -1,30 +1,43 @@
 {
-  "name": "@sportviz/core",
-  "version": "0.1.0",
-  "description": "Framework-agnostic sports data visualization engine",
+  "name": "@basketball-ceo/core",
+  "version": "0.2.0",
+  "description": "Framework-agnostic basketball visualization engine — court geometry, layers, scales, themes",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target browser && bun run build:types",
     "build:types": "tsc --emitDeclarationOnly",
     "prepublishOnly": "bun run build",
     "test": "bun test"
   },
-  "keywords": ["sports", "visualization", "basketball", "shot-chart", "hexbin", "svg", "data-viz"],
-  "author": "Tripp Horbinski",
+  "keywords": [
+    "basketball",
+    "shot-chart",
+    "hexbin",
+    "nba",
+    "ncaa",
+    "wnba",
+    "court",
+    "data-viz",
+    "svg"
+  ],
+  "author": "Tripp Horbinski (https://basketball.ceo)",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tripp-horbinski/sportviz.git",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/tripp-horbinski/sportviz"
+  "homepage": "https://basketball.ceo",
+  "publishConfig": {
+    "access": "public"
+  }
 }

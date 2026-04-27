@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { Theme, SurfaceGeometry } from "@sportviz/core";
+import type { Theme, SurfaceGeometry } from "@basketball-ceo/core";
 
 export interface CourtContext {
   geometry: SurfaceGeometry;

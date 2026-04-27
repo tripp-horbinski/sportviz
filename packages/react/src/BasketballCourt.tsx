@@ -7,7 +7,7 @@ import {
   type League,
   type Theme,
   type ThemeName,
-} from "@sportviz/core";
+} from "@basketball-ceo/core";
 import { SurfaceContext } from "./context";
 
 export interface BasketballCourtProps {

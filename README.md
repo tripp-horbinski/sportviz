@@ -1,17 +1,21 @@
-# sportviz
+# @basketball-ceo/charts
 
-Composable sports data visualization for React. NBA court surfaces with scatter, hexbin, zone, annotation, and play animation overlays.
+Composable basketball visualization for React. Court surfaces, shot charts, hexbin heatmaps, zone efficiency, and animated play sequences. Built and maintained by [basketball.ceo](https://basketball.ceo).
+
+> **Live demo:** _coming soon — GitHub Pages deploy in progress_
 
 ## Install
 
 ```bash
-npm install @tripp-horbinski/sportviz
+npm install @basketball-ceo/charts
+# or
+bun add @basketball-ceo/charts
 ```
 
 ## Quick Start
 
 ```tsx
-import { BasketballCourt, ScatterOverlay } from "@tripp-horbinski/sportviz";
+import { BasketballCourt, ScatterOverlay } from "@basketball-ceo/charts";
 
 const shots = [
   { x: 0, y: 1, made: true },
@@ -54,7 +58,7 @@ Individual data points on the court.
 Aggregate data into hexagonal bins with color-coded frequency.
 
 ```tsx
-import { blueRed } from "@tripp-horbinski/sportviz";
+import { blueRed } from "@basketball-ceo/charts";
 
 <HexbinOverlay
   data={shots}
@@ -69,7 +73,7 @@ import { blueRed } from "@tripp-horbinski/sportviz";
 NBA shooting zones with computed efficiency stats.
 
 ```tsx
-import { redGreen } from "@tripp-horbinski/sportviz";
+import { redGreen } from "@basketball-ceo/charts";
 
 <ZoneOverlay
   data={shots}
@@ -148,7 +152,7 @@ All 30 NBA teams available as themes. Wood-toned court with team colors on paint
 Map team abbreviations to theme names:
 
 ```tsx
-import { teamThemeMap } from "@tripp-horbinski/sportviz";
+import { teamThemeMap } from "@basketball-ceo/charts";
 
 const theme = teamThemeMap["GSW"]; // "warriors"
 ```
@@ -162,12 +166,12 @@ Origin at basket center, units in feet. +X is right, +Y is toward halfcourt.
 - Three-point arc: radius `23.75` from origin
 - Corner three: `(±22, -5.25)` to `(±22, 8.75)`
 
-NBA API coordinates (`LOC_X`, `LOC_Y`) convert by dividing by 10.
+NBA stats API coordinates (`LOC_X`, `LOC_Y`) convert by dividing by 10. A dedicated adapter package — `@basketball-ceo/nba` — is on the roadmap for one-line integration.
 
 ## Color Scales
 
 ```tsx
-import { blueRed, redGreen, greenRed, colorScale } from "@tripp-horbinski/sportviz";
+import { blueRed, redGreen, greenRed, colorScale } from "@basketball-ceo/charts";
 
 // Built-in
 blueRed    // cold → hot (frequency)
@@ -178,9 +182,13 @@ greenRed   // good → bad
 const custom = colorScale(["#000000", "#ff0000", "#ffff00"]);
 ```
 
-## Package
+## Packages
 
-`@tripp-horbinski/sportviz` — React components + framework-agnostic core bundled together. Single install, single import.
+This is a monorepo:
+
+- **`@basketball-ceo/charts`** — React components + bundled engine. The single dep most users want.
+- **`@basketball-ceo/core`** — Framework-agnostic engine (court geometry, layer math, scales, themes). Use this directly only if you're not on React.
+- **`@basketball-ceo/nba`** _(coming soon)_ — Adapter that turns NBA stats API rows into chart-ready data points.
 
 ## Development
 
@@ -189,15 +197,19 @@ const custom = colorScale(["#000000", "#ff0000", "#ffff00"]);
 bun install
 
 # Build packages
-cd packages/core && bun run build
-cd packages/react && bun run build
+bun run --cwd packages/core build
+bun run --cwd packages/react build
 
 # Run demo
-cd apps/demo && bunx vite
+bun run --cwd apps/demo dev
 
 # Test
-cd packages/core && bun test
+bun run --cwd packages/core test
 ```
+
+## About
+
+Built by [Tripp Horbinski](https://basketball.ceo) as a free dev tool for the basketball analytics community. If this saves you a weekend, [say hi at basketball.ceo](https://basketball.ceo).
 
 ## License
 

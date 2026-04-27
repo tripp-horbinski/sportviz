@@ -1,14 +1,14 @@
 {
-  "name": "@tripp-horbinski/sportviz",
-  "version": "0.2.1",
-  "description": "Composable sports data visualization for React — basketball courts, shot charts, hexbin heatmaps, zone efficiency, play animations",
+  "name": "@basketball-ceo/charts",
+  "version": "0.2.0",
+  "description": "Composable basketball visualization for React — courts, shot charts, hexbin heatmaps, zone efficiency, play animations. NBA, NCAA, WNBA, FIBA.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
   "files": [
@@ -18,36 +18,43 @@
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target browser --external react --external react-dom && bun run build:types",
     "build:types": "tsc --emitDeclarationOnly",
-    "prepublishOnly": "cp ../../README.md . && bun run build",
+    "prepublishOnly": "bun run build",
     "test": "bun test"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
+  "dependencies": {
+    "@basketball-ceo/core": "^0.2.0"
+  },
   "devDependencies": {
-    "@sportviz/core": "workspace:*",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "keywords": [
-    "sports",
-    "visualization",
     "basketball",
     "shot-chart",
-    "react",
-    "svg",
-    "data-viz",
     "hexbin",
-    "court"
+    "nba",
+    "ncaa",
+    "wnba",
+    "court",
+    "react",
+    "data-viz",
+    "svg"
   ],
-  "author": "Tripp Horbinski",
+  "author": "Tripp Horbinski (https://basketball.ceo)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tripp-horbinski/sportviz.git"
+    "url": "git+https://github.com/tripp-horbinski/sportviz.git",
+    "directory": "packages/react"
   },
-  "homepage": "https://github.com/tripp-horbinski/sportviz"
+  "homepage": "https://basketball.ceo",
+  "publishConfig": {
+    "access": "public"
+  }
 }

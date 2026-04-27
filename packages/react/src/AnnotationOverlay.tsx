@@ -1,5 +1,5 @@
 import React from "react";
-import type { Annotation } from "@sportviz/core";
+import type { Annotation } from "@basketball-ceo/core";
 import { useSurface } from "./context";
 
 export interface AnnotationOverlayProps {

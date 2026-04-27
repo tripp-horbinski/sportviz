@@ -1,5 +1,5 @@
 {
-  "name": "@sportviz/demo",
+  "name": "@basketball-ceo/demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,8 @@
     "build": "bunx vite build"
   },
   "dependencies": {
-    "@sportviz/core": "workspace:*",
-    "@tripp-horbinski/sportviz": "workspace:*",
+    "@basketball-ceo/core": "workspace:*",
+    "@basketball-ceo/charts": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
