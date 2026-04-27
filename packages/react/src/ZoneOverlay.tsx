@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { computeZones, redGreen, type DataPoint, type ZoneConfig, type ColorScale, type Zone } from "@sportviz/core";
+import { computeZones, redGreen, type DataPoint, type ZoneConfig, type ColorScale, type Zone } from "@basketball-ceo/core";
 import { useSurface } from "./context";
 
 export interface ZoneOverlayProps {

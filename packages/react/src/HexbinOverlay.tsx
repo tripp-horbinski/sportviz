@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { computeHexbin, type DataPoint, type HexbinConfig, type HexbinCell } from "@sportviz/core";
+import { computeHexbin, type DataPoint, type HexbinConfig, type HexbinCell } from "@basketball-ceo/core";
 import { useSurface } from "./context";
 
 export interface HexbinOverlayProps extends HexbinConfig {

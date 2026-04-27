@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import type { DataPoint } from "@sportviz/core";
+import type { DataPoint } from "@basketball-ceo/core";
 
 export interface NbaShotResult {
   shots: DataPoint[];

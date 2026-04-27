@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useMemo, useCallback } from "react";
-import type { PlaySequence, PlayFrame, Point } from "@sportviz/core";
+import type { PlaySequence, PlayFrame, Point } from "@basketball-ceo/core";
 import { useSurface } from "./context";
 
 export interface PlayOverlayProps {

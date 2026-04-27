@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { computeScatter, type DataPoint, type ScatterConfig, type ScatterPoint } from "@sportviz/core";
+import { computeScatter, type DataPoint, type ScatterConfig, type ScatterPoint } from "@basketball-ceo/core";
 import { useSurface } from "./context";
 
 export interface ScatterOverlayProps extends ScatterConfig {

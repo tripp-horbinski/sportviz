@@ -10,9 +10,9 @@ import {
   type Annotation,
   type DataPoint,
   type PlaySequence,
-} from "@tripp-horbinski/sportviz";
-import type { Orientation } from "@sportviz/core";
-import { redGreen, blueRed } from "@sportviz/core";
+} from "@basketball-ceo/charts";
+import type { Orientation } from "@basketball-ceo/core";
+import { redGreen, blueRed } from "@basketball-ceo/core";
 import { sampleShots } from "./sample-data";
 import { searchPlayers, type PlayerInfo } from "./players";
 import { useNbaShots } from "./use-nba-shots";
@@ -335,14 +335,17 @@ function App() {
       <header className="demo-header">
         <div className="demo-header-inner">
           <div className="demo-brand">
-            <h1 className="demo-logo">sportviz</h1>
+            <h1 className="demo-logo">@basketball-ceo/charts</h1>
             <span className="demo-tagline">
-              Sports data visualization for React
+              Basketball visualization for React · by{" "}
+              <a href="https://basketball.ceo" target="_blank" rel="noopener">
+                basketball.ceo
+              </a>
             </span>
           </div>
           <a
             className="demo-github"
-            href="https://github.com/sportviz"
+            href="https://github.com/tripp-horbinski/sportviz"
             target="_blank"
             rel="noopener"
           >

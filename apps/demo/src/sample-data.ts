@@ -1,4 +1,4 @@
-import type { DataPoint } from "@sportviz/core";
+import type { DataPoint } from "@basketball-ceo/core";
 
 /**
  * Sample shot chart data modeled after a typical NBA player's shot distribution.

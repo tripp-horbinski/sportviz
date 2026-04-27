@@ -17,5 +17,5 @@ export { PlayOverlay } from "./PlayOverlay";
 export type { PlayOverlayProps } from "./PlayOverlay";
 
 // Re-export core types and utilities that consumers commonly need
-export type { DataPoint, Orientation, Theme, ThemeName, ColorScale, Annotation, AnnotationMark, PlaySequence, PlayFrame, PlayPlayer } from "@sportviz/core";
-export { themes, light, dark, teamThemeMap, blueRed, greenRed, redGreen, colorScale } from "@sportviz/core";
+export type { DataPoint, Orientation, Theme, ThemeName, ColorScale, Annotation, AnnotationMark, PlaySequence, PlayFrame, PlayPlayer } from "@basketball-ceo/core";
+export { themes, light, dark, teamThemeMap, blueRed, greenRed, redGreen, colorScale } from "@basketball-ceo/core";
