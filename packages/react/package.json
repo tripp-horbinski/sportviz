@@ -1,6 +1,6 @@
 {
   "name": "@basketball-ceo/charts",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Composable basketball visualization for React — courts, shot charts, hexbin heatmaps, zone efficiency, play animations. NBA, NCAA, WNBA, FIBA.",
   "type": "module",
   "main": "dist/index.js",

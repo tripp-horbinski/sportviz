@@ -1,3 +1,26 @@
+# [1.0.0](https://github.com/tripp-horbinski/sportviz/compare/v0.2.1...v1.0.0) (2026-04-27)
+
+
+* feat(packages)!: rebrand to [@basketball-ceo](https://github.com/basketball-ceo), ship core standalone ([#1](https://github.com/tripp-horbinski/sportviz/issues/1)) ([e20c14c](https://github.com/tripp-horbinski/sportviz/commit/e20c14c5030c371d17bb2441d28eb812f08061a6))
+
+
+### BREAKING CHANGES
+
+* package renamed from @tripp-horbinski/sportviz to
+@basketball-ceo/charts. Core engine (previously unpublished as @sportviz/core)
+is now published as @basketball-ceo/core.
+
+- Rename @sportviz/core → @basketball-ceo/core (now published to npm)
+- Rename @tripp-horbinski/sportviz → @basketball-ceo/charts
+- Fix exports map ordering so TypeScript resolves "types" first
+- Drop README copy hack at publish time; each package owns its README
+- Basketball-only focus: drop multi-sport language and keywords, tie
+  branding to basketball.ceo for authority
+- Update demo app workspace deps and header to point at basketball.ceo
+- Dedupe duplicate 0.2.0 CHANGELOG entries from prior double-release race
+
+Co-authored-by: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+
 # [0.3.0](https://github.com/tripp-horbinski/sportviz/compare/v0.2.1...v0.3.0) (unreleased)
 
 
